@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
     processor = AudioPromptDataset(
         model_name_or_path="pretrained_models/Spark-TTS-0.5B",
-        device="cuda"
+        device="cpu"
     )
 
     processor.tokenize(args.data_dir, args.output_dir)

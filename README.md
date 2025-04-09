@@ -13,6 +13,8 @@ pip install -r requirements.txt
 ```
 **Model Download**
 ```
+source axolotl-env/bin/activate
+
 python -m src.download_pretrain
 ```
 **Ljspeech Download**
@@ -23,6 +25,9 @@ bash download_ljspeech.sh
 ## Create prompt to train LLM
 ```
 python -m src.process_data --data_dir {path_to_dataset} --output_dir {path_to_output_prompts}
+
+python -m src.process_data --data_dir LJSpeech-1.1 --output_dir LJSpeech-1.1-Out
+
 ```
 ## Training LLM
 Config for training is in the config_axolot folder, you can customize batch size, save steps,...
@@ -31,3 +36,8 @@ training script
 axolotl train config_axolotl/full_finetune.yml
 ```
 After training, replace the LLM checkpoint of the original pretrain model with the trained model
+
+
+
+
+
